@@ -416,7 +416,7 @@ section .data
     www_msftncsi_com_label_len: equ $-www_msftncsi_com_label
 
     ; use \r\n because we are all one big happy family
-    http_request_request: db "GET /ncsi HTTP/1.1", 0xD, 0xA, "Host: www.msftncsi.com", 0xD, 0xA, 0xD, 0xA
+    http_request_request: db "GET /ncsi.txt HTTP/1.1", 0xD, 0xA, "Host: www.msftncsi.com", 0xD, 0xA, 0xD, 0xA
     http_request_request_len: equ $-http_request_request
 
     packet_buffer_len: equ 512  ; udp packet max
