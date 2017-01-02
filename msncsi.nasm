@@ -349,10 +349,8 @@ _start:
     ; method 2. DNS query for dns.msftncsi.com
     call resolve_dns_name
     cmp edi, addr_131107255255
-    je exit_1
-
-    ; no further tests - fail
-    jmp exit_neg2
+    je exit_1       ; correct result
+    jmp exit_neg1   ; otherwise, bad result and fail
 
 
 section .data
