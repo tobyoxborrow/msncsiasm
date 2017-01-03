@@ -56,9 +56,10 @@ _start:
         jmp decode_loop
     decode_loop_end:
 
-    ; bswap only works on 32bits, so discard the 16 least significant bits
-    bswap eax       ; ex: 0x0000B077 becomes 0xB0770000
-    shr eax, 0x10   ; ex: 0xB0770000 becomes 0x0000B077
+    ; bswap works on 32/64bits, we are only interested in 16 bits, so discard
+    ; the 16 least significant bits
+    bswap eax       ; ex: 0x0000B077 becomes 0x77B00000
+    shr eax, 0x10   ; ex: 0x77B00000 becomes 0x000077B0
 
     ; copy template to output string
     mov ecx, 0x7

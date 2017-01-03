@@ -35,6 +35,10 @@ Otherwise, it will exit with a non-zero exit status.
 
 ## Installation
 
+To assemble the program, run the make command in the directory appropriate for
+the OS and architecture.
+
+    cd <OS>/<arch>
     make
 
 ## Usage
@@ -61,6 +65,6 @@ command-line and returns the number in hex after the swap. This is useful for
 port numbers. The second, byteswapip, takes an IP address and performs a
 similar operation.
 
-These programs were created partially for learning. Their functionality can be
-found in calculator software bundled with modern operating systems, so are not
-strictly necessary.
+These programs were also created partially for learning. Their functionality
+can be found in calculator software bundled with modern operating systems, so
+are not strictly necessary.

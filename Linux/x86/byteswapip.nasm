@@ -34,8 +34,9 @@ _start:
     pop ecx         ; command filename (ignored)
     pop ecx         ; first argument
 
-    mov esi, 0x0    ; quad counter
+    mov eax, 0x0    ; temp for quad running total
     mov edx, 0xA    ; for mul instruction in loop
+    mov esi, 0x0    ; quad counter (to abort if there is the wrong number)
 
     ; loop over each character converting the ASCII character codes into an
     ; actual number

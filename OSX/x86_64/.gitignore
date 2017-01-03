@@ -1,0 +1,4 @@
+*.o
+msncsi
+byteswap
+byteswapip
