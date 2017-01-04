@@ -1,6 +1,6 @@
 default: msncsi.nasm
 	nasm -f macho64 -o msncsi.o msncsi.nasm
-	ld -macos_version_min 10.9 -lSystem -o msncsi msncsi.o
+	ld -macosx_version_min 10.9 -lSystem -o msncsi msncsi.o
 byteswap: byteswap.nasm
 	nasm -f macho64 -o byteswap.o byteswap.nasm
 	ld -macosx_version_min 10.9 -lSystem -o byteswap byteswap.o

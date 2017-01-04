@@ -130,8 +130,8 @@ _main:
 
 section .data
     ; bsd/kern/syscalls.master
-    __NR_exit equ 0x2000001
-    __NR_write equ 0x2000004
+    __NR_exit:  equ 0x2000001
+    __NR_write: equ 0x2000004
 
     hex_chars: db '0123456789ABCDEF'
     output_template: db '0x????????', 0xA

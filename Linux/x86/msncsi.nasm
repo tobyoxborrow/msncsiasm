@@ -118,8 +118,8 @@ sys_read:
 resolve_name:
     ; ecx - *args for socketcall() / socket()
     mov [socket_args],   dword PF_INET     ; int domain
-    mov [socket_args+4], dword SOCK_DGRAM  ; int domain
-    mov [socket_args+8], dword IPPROTO_IP  ; int domain
+    mov [socket_args+4], dword SOCK_DGRAM  ; int type
+    mov [socket_args+8], dword IPPROTO_IP  ; int protocol
     call sys_socket
     cmp eax, 0x0
     jl exit_neg2
@@ -241,8 +241,8 @@ resolve_name:
 http_request:
     ; ecx - *args for socketcall() / socket()
     mov [socket_args],   dword PF_INET     ; int domain
-    mov [socket_args+4], dword SOCK_STREAM ; int domain
-    mov [socket_args+8], dword IPPROTO_IP  ; int domain
+    mov [socket_args+4], dword SOCK_STREAM ; int type
+    mov [socket_args+8], dword IPPROTO_IP  ; int protocol
     call sys_socket
     cmp eax, 0x0
     jl exit_neg2
@@ -425,6 +425,6 @@ section .data
 section .bss
     socket_args: resb 12
     connect_args: resb 12
-    connect_struct: resb 8
+    connect_struct: resb __SOCK_SIZE__
 
     packet_buffer: resb packet_buffer_len
