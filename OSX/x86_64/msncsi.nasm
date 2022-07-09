@@ -283,7 +283,7 @@ resolve_name:
 
         add rax, 0x2    ; skip rdata length
 
-        mov r14d, [eax]
+        mov r14d, [rax]
     rr_loop_end:
 
     cmp r14, 0x0    ; did we find an A record?
