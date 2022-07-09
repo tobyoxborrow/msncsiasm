@@ -33,28 +33,42 @@ differenciate).
 
 Otherwise, it will exit with a non-zero exit status.
 
+## Dependancies
+
+For OSX/macOS you can install the dependancies using [homebrew](http://brew.sh):
+
+```Shell
+brew install gcc nasm
+```
+
 ## Installation
 
 To assemble the program, run the make command in the directory appropriate for
 the OS and architecture.
 
-    cd <OS>/<arch>
-    make
+```Shell
+cd <OS>/<arch>
+make
+```
 
 ## Usage
 
 The command has no input and provides no output except its exit status.
 
-    ./msncsi
-    echo $?
+```Shell
+./msncsi
+echo $?
+```
 
 It could be used in bash scripts, for example:
 
-    if ./msncsi; then
-        echo "I'm online :-)"
-    else
-        echo "I'm offline :-("
-    fi
+```Shell
+if ./msncsi; then
+    echo "I'm online :-)"
+else
+    echo "I'm offline :-("
+fi
+```
 
 ## byteswap
 
